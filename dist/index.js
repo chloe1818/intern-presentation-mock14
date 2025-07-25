@@ -9,6 +9,8 @@ exports.handler = async (event, context) => {
   console.log('Event received at:', moment().format('YYYY-MM-DD HH:mm:ss'));
   console.log('Event:', JSON.stringify(event, null, 2));
 
+  console.log('Updating function code');
+
   try {
     // Make an HTTP request using axios
     const response = await axios.get('https://api.github.com/zen');

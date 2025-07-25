@@ -46,10 +46,10 @@ env:
   AWS_ROLE_TO_ASSUME: arn:aws:iam::660753258521:role/Test             # set this to your IAM role ARN
   LAMBDA_FUNCTION_NAME: test-lambda14            # set this to your Lambda function name
   LAMBDA_CODE_ARTIFACTS_DIR: ./dist  # set this to the directory containing your Lambda code
-  #LAMBDA_S3_BUCKET: intern-presentation-mock14
-  #LAMBDA_HANDLER: MY_LAMBDA_HANDLER                 # set this to your Lambda handler
-  #LAMBDA_RUNTIME: nodejs22.x                 # set this to your Lambda runtime
-  #LAMBDA_FUNCTION_DESCRIPTION: This is the description.
+  LAMBDA_S3_BUCKET: intern-presentation-mock14
+  LAMBDA_HANDLER: MY_LAMBDA_HANDLER                 # set this to your Lambda handler
+  LAMBDA_RUNTIME: nodejs22.x                 # set this to your Lambda runtime
+  LAMBDA_FUNCTION_DESCRIPTION: This is the description.
   # Include additional parameters as needed (Format at LAMBDA_PARAMETER)
 
 permissions:
@@ -93,8 +93,8 @@ jobs:
         function-name: ${{ env.LAMBDA_FUNCTION_NAME }}
         code-artifacts-dir: ${{ env.LAMBDA_CODE_ARTIFACTS_DIR }}
         role: arn:aws:iam::660753258521:role/lambda-test-execution-role
-        #function-description: ${{ env.LAMBDA_FUNCTION_DESCRIPTION }}
-        #s3-bucket: ${{ env.LAMBDA_S3_BUCKET }}
-        #runtime: ${{ env.LAMBDA_RUNTIME }}
-        #handler: ${{ env.LAMBDA_HANDLER }}
+        function-description: ${{ env.LAMBDA_FUNCTION_DESCRIPTION }}
+        s3-bucket: ${{ env.LAMBDA_S3_BUCKET }}
+        runtime: ${{ env.LAMBDA_RUNTIME }}
+        handler: ${{ env.LAMBDA_HANDLER }}
         # Add any additional inputs your action supports
